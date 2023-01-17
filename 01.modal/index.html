@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/01.modal/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Modal</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
+        accusantium, et facilis qui, eos doloremque corrupti alias vitae veniam
+        harum culpa eius id magni at, expedita fugit deleniti? Recusandae
+        expedita et eaque voluptatem eveniet vel magni repudiandae debitis
+        labore, exercitationem quasi, sunt dolores libero unde, cupiditate
+        reprehenderit id tempore voluptate ipsa. Libero ab corporis molestiae
+        quam velit! Ullam quos ratione mollitia necessitatibus, eius officiis
+        molestiae fugit exercitationem dolore dolor sapiente harum possimus
+        corrupti iusto nisi quibusdam incidunt aspernatur aperiam vero.
+        Excepturi nobis dignissimos sunt odit omnis! Incidunt vero expedita
+        perferendis deserunt quaerat, iure voluptate numquam architecto fuga
+        nesciunt, sit similique.
+      </p>
+      <button>열기</button>
+    </div>
+    <div class="dimm"></div>
+    <div class="modal">
+      <h3>I am modal</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi iste,
+        blanditiis soluta natus repellat veritatis repudiandae, sequi in
+        reprehenderit quia culpa tempora delectus beatae, cumque rerum
+        architecto aliquam debitis quod.
+      </p>
+      <button>닫기</button>
+    </div>
+
+    <!-- jquery -->
+    <script>
+      var open = $('.container button')
+      // 컨테이너 안에 버튼이라는 뜻
+      //const 나 let으로 해도 됨 예전꺼라 var사용
+      var close = $('.modal button')
+      var dimm = $('.dimm')
+      var modal = $('.modal')
+
+      open.click(function () {
+        // open.addEventListener('click',function(){})을 줄인것
+        // dimm.show()
+        // modal.show()
+        dimm.fadeIn()
+        modal.fadeIn()
+      })
+      close.click(function () {
+        // close.addEventListener('click',function(){})을 줄인것
+        // dimm.hide()
+        // modal.hide()
+        dimm.fadeOut()
+        modal.fadeOut()
+      })
+    </script>
+  </body>
+</html>
