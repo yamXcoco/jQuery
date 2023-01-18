@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>each</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>each</h1>
+      <div class="card">
+        <div class="card_photo">
+          <img src="/images (2)/img_01.jpg" alt="" />
+          <div class="sns">
+            <span class="share"><i class="xi-share-alt"></i> </span>
+            <span><i class="xi-facebook"></i> </span>
+            <span><i class="xi-youtube-play"></i> </span>
+            <span><i class="xi-instagram"></i> </span>
+          </div>
+        </div>
+        <div class="card_info">
+          <h2>Lorem ipsum dolor sit amet.</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam
+            iste sapiente rem?
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      var sns = $('.sns')
+      var item = $('.sns span')
+      var time = 300
+      // console.log(item)
+
+      sns.hover(
+        function () {
+          item.each(function (index) {
+            $(this)
+              .stop()
+              .animate({ left: index * 40 }, time)
+            //sns의 left위치를 바꿔줌
+            //애니메이션은 항상 스톱을 넣어줌
+            //아이템의 인덱스는 span의 개수 총 4개
+            //마우스가 들어왔을 때
+          })
+        },
+        function () {
+          item.each(function (index) {
+            $(this).stop().animate({ left: 0 }, time)
+          })
+          //sns의 left위치를 바꿔줌
+          //마우스가 나갔을 때 hover은 이렇게 적을 수 있음
+        }
+      )
+    </script>
+  </body>
+</html>
