@@ -31,10 +31,17 @@
       </div>
 
       <!-- 슬라이드 -->
-      <div class="slide_01">
-        <div class="item item_01"></div>
-        <div class="item item_02"></div>
-        <div class="item item_03"></div>
+      <div class="slider">
+        <div class="slide_01">
+          <div class="item item_01"></div>
+          <div class="item item_02"></div>
+          <div class="item item_03"></div>
+        </div>
+
+        <div class="btns">
+          <img class="prev" src="../images/prev_btn.png" alt="" />
+          <img class="next" src="../images/next_btn.png" alt="" />
+        </div>
       </div>
       <!-- <div class="slide_02"></div> -->
 
@@ -102,9 +109,17 @@
     </div>
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </body>
+
   <script>
     $('.slide_01').slick({
       // autoplay: true,
+      dots: true,
+      // arrows: false,
+      //원래 화살표 지우기
+      nextArrow: $('.next'),
+      prevArrow: $('.prev'),
+      //원래화살표 대체하기
+      //기본으로 있는 겹치는 화살표 지우기
     })
   </script>
 </html>
