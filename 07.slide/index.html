@@ -15,19 +15,63 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
     />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="go_top">
+      <div class="user"><i class="xi-angle-up"></i></div>
+    </div>
     <div class="container">
       <div class="header">
         <h1>로고</h1>
         <ul class="nav">
-          <li><a href="#x">홈</a></li>
-          <li><a href="#x">소개</a></li>
-          <li><a href="#x">서비스</a></li>
-          <li><a href="#x">블로그</a></li>
-          <li><a href="#x">연락하기</a></li>
+          <li>
+            <a href="#x">소개</a>
+            <ul>
+              <li><a href="#x">인사말</a></li>
+              <li><a href="#x">주요연혁</a></li>
+              <li><a href="#x">수상내역</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#x">서비스</a>
+            <ul>
+              <li><a href="#x">리서치</a></li>
+              <li><a href="#x">기업윤리</a></li>
+              <li><a href="#x">기업윤리규범</a></li>
+              <li><a href="#x">프라이버시</a></li>
+              <li><a href="#x">라이브러리</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#x">블로그</a>
+            <ul>
+              <li><a href="#x">보도자료</a></li>
+              <li><a href="#x">TV광고</a></li>
+              <li><a href="#x">미디어행사</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#x">포트폴리오</a>
+            <ul>
+              <li><a href="#x">기업지배구조</a></li>
+              <li><a href="#x">주주구성</a></li>
+              <li><a href="#x">이사회</a></li>
+              <li><a href="#x">정관</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#x">연락하기</a>
+            <ul>
+              <li><a href="#x">채용정보</a></li>
+            </ul>
+          </li>
         </ul>
+        <div class="user"><i class="xi-user"></i></div>
       </div>
 
       <!-- 슬라이드 -->
@@ -67,6 +111,15 @@
           나는 피어나듯이 릴케 지나고 말 봅니다. 둘 무덤 속의 하나에 옥 청춘이
           있습니다.
         </p>
+
+        <!-- slide_02 -->
+        <div class="slide_02">
+          <div class="item"><img src="/images/img_01.jpg" alt="" /></div>
+          <div class="item"><img src="/images/img_02.jpg" alt="" /></div>
+          <div class="item"><img src="/images/img_03.jpg" alt="" /></div>
+          <div class="item"><img src="/images/img_04.jpg" alt="" /></div>
+        </div>
+
         <p>
           묻힌 아직 이름을 밤을 있습니다. 별 가난한 내 하나에 너무나 없이 아침이
           버리었습니다. 이름자 별들을 걱정도 자랑처럼 이네들은 별 없이 있습니다.
@@ -108,18 +161,56 @@
       </div>
     </div>
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  </body>
 
-  <script>
-    $('.slide_01').slick({
-      // autoplay: true,
-      dots: true,
-      // arrows: false,
-      //원래 화살표 지우기
-      nextArrow: $('.next'),
-      prevArrow: $('.prev'),
-      //원래화살표 대체하기
-      //기본으로 있는 겹치는 화살표 지우기
-    })
-  </script>
+    <!-- 슬라이드 옆으로 넘어가게 -->
+    <script>
+      $('.slide_01').slick({
+        // autoplay: true,
+        dots: true,
+        // arrows: false,
+        //원래 화살표 지우기
+        nextArrow: $('.next'),
+        prevArrow: $('.prev'),
+        //원래화살표 대체하기
+        //기본으로 있는 겹치는 화살표 지우기
+      })
+      $('.slide_02').slick({
+        dots: true,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      })
+    </script>
+
+    <!-- nev스크롤 작아지게 -->
+    <script>
+      $('.nav li').hover(function () {
+        $(this).find('ul').stop().slideToggle('fast')
+      })
+    </script>
+
+    <script>
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+          $('.header').addClass('on')
+        } else {
+          $('.header').removeClass('on')
+        }
+      })
+    </script>
+    <!-- 위로올라가는 화살표코드 -->
+    <script>
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 600) {
+          $('.go_top').fadeIn()
+        } else {
+          $('.go_top').fadeOut()
+        }
+      })
+      //처음에는 안보였다 나중에 보이게
+      $('.go_top').click(function () {
+        $('html').animate({ scrollTop: 0 }, 300)
+      })
+      //누르면 올라가게
+    </script>
+  </body>
 </html>

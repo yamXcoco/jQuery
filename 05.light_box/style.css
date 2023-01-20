@@ -45,9 +45,11 @@ h1 {
   justify-content: center;
   /* display: none; */
   visibility: hidden;
+  /* 이걸 넣어야 다시 들어감 */
 }
 .dimm.show {
   visibility: visible;
+  /* 이걸 넣어야 클릭하면 나옴 */
 }
 .dimm img {
   height: 80%;
